@@ -1,10 +1,13 @@
 server:
   http_listen_port: 3200
+  grpc_listen_port: 4317
 
 distributor:
   receivers:
     otlp:
       protocols:
+        grpc:
+          endpoint: 0.0.0.0:4317
         http:
           endpoint: 0.0.0.0:4318
 
@@ -20,4 +23,9 @@ storage:
     backend: local
     local:
       path: /var/tempo/blocks
+
+# Enable search/indexing so service names and tags are discoverable in Grafana
+querier:
+  frontend_worker:
+    frontend_address: localhost:3200
 

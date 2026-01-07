@@ -20,7 +20,7 @@ services:
     entrypoint: sh -c "mkdir -p /loki/index /loki/chunks && /usr/bin/loki -config.file=/etc/loki/local-config.yaml"
 
   tempo:
-    image: grafana/tempo:1.5.0
+    image: grafana/tempo:2.3.1
     container_name: tempo
     command: -config.file=/etc/tempo/local-config.yaml
     volumes:
@@ -28,7 +28,7 @@ services:
       - tempo-data:/var/tempo
     ports:
       - 3200:3200
-      - 4318:4318
+      - 4317:4317
     networks:
       - observability
 
@@ -37,8 +37,25 @@ services:
     container_name: grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
     ports:
       - 3000:3000
+    networks:
+      - observability
+
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: prometheus
+    volumes:
+      - ./central/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=15d
+    ports:
+      - 9090:9090
     networks:
       - observability
 
@@ -46,4 +63,4 @@ volumes:
   loki-data:
   loki-wal:
   tempo-data:
-
+  prometheus-data:

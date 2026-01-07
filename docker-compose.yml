@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+  # Logging Stack
   loki:
     image: grafana/loki:2.8.2
     container_name: loki
@@ -10,72 +11,124 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
     ports:
       - 3100:3100
+    networks:
+      - observability
 
-  promtail:
-    image: grafana/promtail:2.8.2
-    container_name: promtail
+  # Tracing Stack
+  tempo:
+    image: grafana/tempo:1.5.0
+    container_name: tempo
     volumes:
-      - ./promtail-config.yaml:/etc/promtail/promtail-config.yaml:ro
-      - ./app/log:/var/log:rw
-    command: -config.file=/etc/promtail/promtail-config.yaml
+      - tempo-data:/var/tempo
+    command: -config.file=/etc/tempo/tempo-config.yaml
+    environment:
+      - TEMPO_SEARCH_ENABLED=true
+    ports:
+      - 3200:3200  # tempo
+      - 4317:4317  # OTLP gRPC
+      - 4318:4318  # OTLP HTTP
+    networks:
+      - observability
 
+  # Metrics Stack
   prometheus:
     image: prom/prometheus:v2.45.0
     container_name: prometheus
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
     ports:
       - 9090:9090
+    networks:
+      - observability
 
+  # OpenTelemetry Collector (for sidecar)
   otel-collector:
     image: otel/opentelemetry-collector-contrib:0.85.0
     container_name: otel-collector
     volumes:
-      - ./otel-collector-config.yaml:/etc/otel/config.yaml:ro
+      - ./sidecar/otel-collector-config.yaml:/etc/otel/config.yaml:ro
     command: ["--config=/etc/otel/config.yaml"]
     ports:
-      - 55681:55681 # OTLP HTTP
+      - 55681:55681  # OTLP HTTP (legacy)
+      - 4317:4317    # OTLP gRPC
+      - 4318:4318    # OTLP HTTP
+      - 8888:8888    # Prometheus metrics
+    depends_on:
+      - tempo
+    networks:
+      - observability
 
-  jaeger:
-    image: jaegertracing/all-in-one:1.49
-    container_name: jaeger
-    ports:
-      - 16686:16686
-      - 14268:14268
-
+  # Visualization & Dashboards
   grafana:
     image: grafana/grafana:9.5.2
     container_name: grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
     ports:
       - 3000:3000
-
-  nginx-sidecar:
-    build: ./nginx
-    container_name: nginx-sidecar
-    ports:
-      - 8443:443
     depends_on:
-      - app
+      - loki
+      - prometheus
+      - tempo
+    networks:
+      - observability
 
-  app:
+  # Application Stack with Sidecar Pattern
+  # Main Application
+  demo-app:
     build: ./app
     container_name: demo-app
     volumes:
       - ./app/log:/var/log
     environment:
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:55681/v1/traces
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=demo-app
     ports:
       - 8080:8080
     depends_on:
       - otel-collector
       - prometheus
+    networks:
+      - observability
+
+  # Fluent Bit - Log Router Sidecar (collects app logs and sends to Loki)
+  fluent-bit:
+    image: fluent/fluent-bit:2.1.8
+    container_name: fluent-bit
+    volumes:
+      - ./sidecar/fluent-bit/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
+      - ./app/log:/var/log:ro
+    command: /fluent-bit/bin/fluent-bit -c /fluent-bit/etc/fluent-bit.conf
+    depends_on:
+      - loki
+    networks:
+      - observability
+
+  # Nginx API Sidecar (proxy + TLS termination for app)
+  nginx-sidecar:
+    build: ./nginx
+    container_name: nginx-sidecar
+    ports:
+      - 80:80
+      - 8443:443
+    depends_on:
+      - demo-app
+    networks:
+      - observability
 
 volumes:
   loki-data:
+  tempo-data:
+  prometheus-data:
+  grafana-data:
 
 networks:
-  default:
+  observability:
     driver: bridge

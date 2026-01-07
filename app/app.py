@@ -39,7 +39,11 @@ FlaskInstrumentor().instrument_app(app)
 @app.route('/')
 def index():
     with tracer.start_as_current_span("index-handler"):
-        logger.info("handling index request")
+        # attach trace_id to logs so Fluent Bit -> Loki shows trace linkage
+        span = trace.get_current_span()
+        span_ctx = span.get_span_context()
+        trace_id = format(span_ctx.trace_id, '032x') if span_ctx and span_ctx.trace_id else None
+        logger.info("handling index request", extra={"trace_id": trace_id})
         REQUESTS.labels(endpoint='/').inc()
         time.sleep(0.05)
         return jsonify({"status": "ok"})
@@ -51,7 +55,10 @@ def metrics():
 @app.route('/error')
 def error_handler():
     with tracer.start_as_current_span("error-handler"):
-        logger.error("simulated error request")
+        span = trace.get_current_span()
+        span_ctx = span.get_span_context()
+        trace_id = format(span_ctx.trace_id, '032x') if span_ctx and span_ctx.trace_id else None
+        logger.error("simulated error request", extra={"trace_id": trace_id})
         REQUESTS.labels(endpoint='/error').inc()
         return jsonify({"error": "simulated error"}), 500
 

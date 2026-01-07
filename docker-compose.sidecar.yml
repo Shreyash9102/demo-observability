@@ -11,7 +11,7 @@ services:
     volumes:
       - ./app/log:/var/log
     environment:
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:55681/v1/traces
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_SERVICE_NAME=demo-app
     networks:
       - observability
@@ -20,7 +20,8 @@ services:
     build: ./nginx
     container_name: nginx-sidecar
     ports:
-      - 8443:443
+      - "80"
+      - "443"
     depends_on:
       - demo-app
     networks:
@@ -44,4 +45,20 @@ services:
     command: ["--config=/etc/otel/config.yaml"]
     networks:
       - observability
+
+  config-updater:
+    build:
+      context: .
+      dockerfile: sidecar/config-updater/Dockerfile
+    container_name: config-updater
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - demo-app
+    networks:
+      - observability
+    environment:
+      - PROMETHEUS_HOST=prometheus
+      - PROMETHEUS_PORT=9090
 
