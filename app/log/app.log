@@ -1,0 +1,7 @@
+{"asctime": "2026-01-07 05:13:16,130", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-07 05:13:16,280", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-07 05:13:44,285", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-07 05:13:44,343", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-07 05:13:44,396", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-07 05:13:44,453", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-07 05:13:44,509", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}

@@ -1,0 +1,47 @@
+version: '3.8'
+
+networks:
+  observability:
+    external: true
+
+services:
+  demo-app:
+    build: ./app
+    container_name: demo-app
+    volumes:
+      - ./app/log:/var/log
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:55681/v1/traces
+      - OTEL_SERVICE_NAME=demo-app
+    networks:
+      - observability
+
+  nginx-sidecar:
+    build: ./nginx
+    container_name: nginx-sidecar
+    ports:
+      - 8443:443
+    depends_on:
+      - demo-app
+    networks:
+      - observability
+
+  fluent-bit:
+    image: fluent/fluent-bit:2.1.8
+    container_name: fluent-bit
+    volumes:
+      - ./sidecar/fluent-bit/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./app/log:/var/log
+    networks:
+      - observability
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.85.0
+    container_name: otel-collector
+    volumes:
+      - ./sidecar/otel-collector-config.yaml:/etc/otel/config.yaml:ro
+    command: ["--config=/etc/otel/config.yaml"]
+    networks:
+      - observability
+

@@ -1,0 +1,8 @@
+flask
+prometheus_client
+gunicorn
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-exporter-otlp-proto-http
+opentelemetry-instrumentation-flask
+python-json-logger
