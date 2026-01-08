@@ -1,0 +1,56 @@
+flowchart TB
+
+%% =========================
+%% Observability Backend
+%% =========================
+subgraph Backend["Observability Backend Layer"]
+    Loki["Loki\n:3100"]
+    Prometheus["Prometheus\n:9090"]
+    Tempo["Tempo\n:3200"]
+    Grafana["Grafana\n:3000"]
+end
+
+%% =========================
+%% Central OTEL Collector
+%% =========================
+subgraph CentralOTEL["OTEL Collector (Central Hub)"]
+    OTLP["Receivers\nOTLP HTTP :4318\nOTLP gRPC :4317"]
+    Exporters["Exporters\n→ Tempo\n→ Prometheus"]
+end
+
+%% =========================
+%% Application Sidecar
+%% =========================
+subgraph AppSidecar["Application Sidecar Pattern"]
+
+    subgraph Gateway["API Gateway"]
+        Nginx["Nginx\n80/443 → 8443\nSSL/TLS"]
+    end
+
+    subgraph App["Demo Flask Application"]
+        Flask["Flask App\n:8080\n\n• OTEL → :4318\n• /metrics\n• app.log (JSON)"]
+    end
+
+    subgraph Sidecars["Sidecars"]
+        FluentBit["Fluent Bit\nLog Router"]
+        SidecarOTEL["OTEL Collector\n(Sidecar)"]
+    end
+end
+
+%% =========================
+%% Data Flows
+%% =========================
+Nginx --> Flask
+
+Flask -->|Traces| SidecarOTEL
+SidecarOTEL -->|Traces| CentralOTEL
+
+Flask -->|Metrics| Prometheus
+CentralOTEL -->|Metrics| Prometheus
+
+FluentBit -->|Logs| Loki
+Flask -->|Logs| FluentBit
+
+Tempo --> Grafana
+Loki --> Grafana
+Prometheus --> Grafana

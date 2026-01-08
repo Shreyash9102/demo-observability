@@ -90,3 +90,7 @@
 {"asctime": "2026-01-07 11:53:01,579", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "faf7b867bc4be6f1501fb16218059d38"}
 {"asctime": "2026-01-07 11:53:02,249", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "c40ee861029453725396b1067f006c29"}
 {"asctime": "2026-01-07 11:54:18,887", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "10185689bff78dda1d51206a64bce67d"}
+{"asctime": "2026-01-07 12:11:39,970", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "875921a0f70ac8fce7245402c9cbe137"}
+{"asctime": "2026-01-07 12:11:42,423", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "2d86f12b5001daf36c559ef911802d12"}
+{"asctime": "2026-01-07 12:11:43,032", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "def911725ade0ae2a4c293f511f29837"}
+{"asctime": "2026-01-07 12:11:43,392", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "b2e0d5c87d4f03c645a6f848704b0ad8"}

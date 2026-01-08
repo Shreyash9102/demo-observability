@@ -28,9 +28,11 @@ services:
       - tempo-data:/var/tempo
     ports:
       - 3200:3200
-      - 4317:4317
     networks:
       - observability
+    expose:
+      - "4317"
+      - "4318"
 
   grafana:
     image: grafana/grafana:9.5.2
@@ -48,7 +50,7 @@ services:
     image: prom/prometheus:v2.45.0
     container_name: prometheus
     volumes:
-      - ./central/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus-data:/prometheus
     command:
       - --config.file=/etc/prometheus/prometheus.yml
