@@ -1,6 +1,5 @@
 server:
   http_listen_port: 3200
-  grpc_listen_port: 0
 
 distributor:
   receivers:
@@ -12,6 +11,8 @@ distributor:
           endpoint: 0.0.0.0:4318
 
 ingester:
+  max_block_duration: 30s
+  max_block_bytes: 1000000
   lifecycler:
     ring:
       replication_factor: 1
@@ -23,9 +24,4 @@ storage:
     backend: local
     local:
       path: /var/tempo/blocks
-
-# Enable search/indexing so service names and tags are discoverable in Grafana
-querier:
-  frontend_worker:
-    frontend_address: localhost:3200
 

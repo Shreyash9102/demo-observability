@@ -94,3 +94,112 @@
 {"asctime": "2026-01-07 12:11:42,423", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "2d86f12b5001daf36c559ef911802d12"}
 {"asctime": "2026-01-07 12:11:43,032", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "def911725ade0ae2a4c293f511f29837"}
 {"asctime": "2026-01-07 12:11:43,392", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "b2e0d5c87d4f03c645a6f848704b0ad8"}
+{"asctime": "2026-01-08 04:20:04,723", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:04,778", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:04,835", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:04,889", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:04,944", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:05,000", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:05,058", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:05,117", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:05,174", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:20:05,230", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:02,836", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:02,890", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:02,946", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,000", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,054", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,112", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,167", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,224", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,280", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,336", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,392", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,450", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,507", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,560", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,614", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,667", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,719", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,775", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,829", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:40:03,884", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:44:54,380", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:44:54,646", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:44:54,910", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:44:55,170", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:44:55,430", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:44:55,696", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:44:55,957", "levelname": "ERROR", "name": "demo-app", "message": "simulated error request"}
+{"asctime": "2026-01-08 04:56:59,088", "levelname": "INFO", "name": "demo-app", "message": "handling index request"}
+{"asctime": "2026-01-08 04:57:03,623", "levelname": "ERROR", "name": "demo-app", "message": "simulated error request"}
+{"asctime": "2026-01-08 04:57:03,704", "levelname": "ERROR", "name": "demo-app", "message": "simulated error request"}
+{"asctime": "2026-01-08 04:59:40,756", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "8979ad18892718aae4f3b5a71b899efa"}
+{"asctime": "2026-01-08 04:59:40,909", "levelname": "ERROR", "name": "demo-app", "message": "simulated error request", "trace_id": "b7c356556365bef0ef86571707ed98f1"}
+{"asctime": "2026-01-08 04:59:49,797", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "e21af62e3ad4539b38551bd59130aafa"}
+{"asctime": "2026-01-08 05:00:29,044", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "e9e0914420bae020bf8c793efb883746"}
+{"asctime": "2026-01-08 05:00:29,195", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "1139f085385ff5065f3f9800a42d900c"}
+{"asctime": "2026-01-08 05:00:29,347", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "ab10ae57c0a9725cfda09328fea8c7e4"}
+{"asctime": "2026-01-08 05:00:29,501", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "3986a61089b37077997017bb6b1ebba6"}
+{"asctime": "2026-01-08 05:00:29,656", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "618d3c131794d1fef4ebceb7bd2b5d97"}
+{"asctime": "2026-01-08 05:01:06,118", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "951a6b1dc7227dbd2c0d87118aa8db4c"}
+{"asctime": "2026-01-08 05:01:06,273", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "7df1e7d17a3c53a4ab3e7b32ca583eaf"}
+{"asctime": "2026-01-08 05:01:06,428", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "71057e007749f75b3504680e57958c4e"}
+{"asctime": "2026-01-08 05:01:32,523", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "4260ad172a0eaa719e3838d9ba4d22d4"}
+{"asctime": "2026-01-08 05:01:33,203", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "ef5aa957401015c446e01769b1bbf293"}
+{"asctime": "2026-01-08 05:01:33,891", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "33a3e8f3ff59f6a63bbae629af48898b"}
+{"asctime": "2026-01-08 05:01:34,580", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "21fea53249005b95b9d07ef2b0500d18"}
+{"asctime": "2026-01-08 05:01:35,276", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "39c830d36935b204be8c32d90536c48e"}
+{"asctime": "2026-01-08 05:02:11,340", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "9f93ef7ce260fe3e6d6c6b8c024f7189"}
+{"asctime": "2026-01-08 05:02:12,027", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "d1bc5273512361e8341ce104ed0b9006"}
+{"asctime": "2026-01-08 05:02:12,708", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "82a9a8ff018c701952158915efcca59e"}
+{"asctime": "2026-01-08 05:02:13,388", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "bbc2c59d540acbaf33e525d16cb1258f"}
+{"asctime": "2026-01-08 05:02:14,083", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "ae92cba91dfffc8bd24187aa62f8b6c1"}
+{"asctime": "2026-01-08 05:02:34,373", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "772b01aaa916ee218f679e81d7e89144"}
+{"asctime": "2026-01-08 05:02:35,070", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "3755c20f25350d288e341079d058e490"}
+{"asctime": "2026-01-08 05:02:35,762", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "6f65040039d7ba376793c930c77bba9d"}
+{"asctime": "2026-01-08 05:02:50,792", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "3506942810a1abaf82a69768b86e5ca7"}
+{"asctime": "2026-01-08 05:02:51,287", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "faccbec95345dd95ab70adbb47486419"}
+{"asctime": "2026-01-08 05:02:51,767", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "2e51123d2aaff50c32fb8eb5db1ad218"}
+{"asctime": "2026-01-08 05:02:52,269", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "6c9073c1f3133ee588765c2b1073c5b1"}
+{"asctime": "2026-01-08 05:02:52,761", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "2e3e382cc16d9c7debf7310479a4f226"}
+{"asctime": "2026-01-08 05:04:20,421", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "927209063d5b966a83a9688302f1a812"}
+{"asctime": "2026-01-08 05:04:20,813", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "2ac9493beab2c8c81121555d3dd079bd"}
+{"asctime": "2026-01-08 05:04:21,218", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "8303311386cb0e77a16b8f6cdb9c20c1"}
+{"asctime": "2026-01-08 05:04:21,602", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "c1f7cfbd890ade351edd74de8e60dc79"}
+{"asctime": "2026-01-08 05:04:21,996", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "017c2956cda318f0a1ff249371323724"}
+{"asctime": "2026-01-08 05:04:22,400", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "363664ecc0cd547bab952f4aaaabbba0"}
+{"asctime": "2026-01-08 05:04:22,799", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "a3f5f409e9e5f2a36c39eef40a07913a"}
+{"asctime": "2026-01-08 05:04:23,181", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "773f7d5f13f77fe3e9a41f3dcc1c0cd5"}
+{"asctime": "2026-01-08 05:04:23,589", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "cfd150a9a0c4a85ce31ba80d577f235b"}
+{"asctime": "2026-01-08 05:04:23,987", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "ef43715f49ba26bed3685621c56d119d"}
+{"asctime": "2026-01-08 05:05:11,530", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "e163091a6d714c863333ee3247a82ba9"}
+{"asctime": "2026-01-08 05:05:12,023", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "bc6cbfc0c01a339473402141013e4006"}
+{"asctime": "2026-01-08 05:05:12,510", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "0f86cc6e2923b7558edfb5d245de3177"}
+{"asctime": "2026-01-08 05:05:12,996", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "3f2ae013da239856d10f555357487931"}
+{"asctime": "2026-01-08 05:05:13,498", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "b1f8ad11fa8ef3997b7fcf0b72c9dd4b"}
+{"asctime": "2026-01-08 05:05:13,993", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "f25b31b673293e5ac473bb528d54df3a"}
+{"asctime": "2026-01-08 05:05:14,486", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "69d5aa5eeebf9c67c341457b164e1fd2"}
+{"asctime": "2026-01-08 05:05:15,004", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "ace63343928572d5087bbe54b31130da"}
+{"asctime": "2026-01-08 05:05:15,492", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "52ae6314153791c45579f03d17ab9624"}
+{"asctime": "2026-01-08 05:05:16,003", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "2eeac03960a006a2f4e2dd0eee98a74c"}
+{"asctime": "2026-01-08 05:05:16,488", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "c2724c973224edfd07be3c15f6e6aa4a"}
+{"asctime": "2026-01-08 05:05:16,980", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "a71a63f20001dac44064158064bf9c9a"}
+{"asctime": "2026-01-08 05:05:17,476", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "0c053ac69993979f152efb7ac5ddc0bd"}
+{"asctime": "2026-01-08 05:05:17,963", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "665b585640ef4e9e7d054d522d15337b"}
+{"asctime": "2026-01-08 05:05:18,454", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "1a9b65fc5d1e0ca458ed1c5655e45c80"}
+{"asctime": "2026-01-08 05:05:53,814", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "b47dfef74c06f4ab890f78e67acdf08c"}
+{"asctime": "2026-01-08 05:05:54,280", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "8923804ad1d7e7f0e43cd60d43f6bbc9"}
+{"asctime": "2026-01-08 05:05:54,749", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "8f3a15dd7bb79a5d1aeb6ce697350eec"}
+{"asctime": "2026-01-08 05:05:55,242", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "de6928c589d68a3762441ad18eaab7c9"}
+{"asctime": "2026-01-08 05:05:55,738", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "76012bfb144bb656bcad03395ad6cd8e"}
+{"asctime": "2026-01-08 05:09:42,971", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "c76e3211c8c881a039d736f48895e9bb"}
+{"asctime": "2026-01-08 05:09:43,361", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "61ef75dd4f30147e07f866c2dc5500b3"}
+{"asctime": "2026-01-08 05:09:43,737", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "4069797d3f02987fda8e148c4c6b4daa"}
+{"asctime": "2026-01-08 05:09:44,127", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "03ded107b47f947b60a46c4a381d36c6"}
+{"asctime": "2026-01-08 05:09:44,525", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "93bc82d622422d3e518ed4ff19a12d2a"}
+{"asctime": "2026-01-08 05:09:44,916", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "32fb88afb9eb895fea083c079595873d"}
+{"asctime": "2026-01-08 05:09:45,305", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "02cbb268f8237b3f1258d7c2a6b34e81"}
+{"asctime": "2026-01-08 05:09:45,699", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "5fc9d64b50e2d7671143394b63dc7252"}
+{"asctime": "2026-01-08 05:09:46,079", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "f2a521ba3031899880cd1bd8499069d7"}
+{"asctime": "2026-01-08 05:09:46,488", "levelname": "INFO", "name": "demo-app", "message": "handling index request", "trace_id": "498165a9dcce653f991828ef235a1d85"}
