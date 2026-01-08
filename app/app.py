@@ -10,7 +10,7 @@ from opentelemetry import trace
 from opentelemetry.sdk.resources import Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
-from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
 
 # Setup logging
@@ -27,7 +27,7 @@ REQUESTS = Counter('demo_app_requests_total', 'Total demo app requests', ['endpo
 # OpenTelemetry setup
 resource = Resource.create({"service.name": "demo-app"})
 provider = TracerProvider(resource=resource)
-otlp_endpoint = os.getenv("OTEL_EXPORTER_OTLP_ENDPOINT", "http://otel-collector:4318")
+otlp_endpoint = os.getenv("OTEL_EXPORTER_OTLP_ENDPOINT", "otel-collector:4317")
 otlp_exporter = OTLPSpanExporter(endpoint=otlp_endpoint)
 provider.add_span_processor(BatchSpanProcessor(otlp_exporter))
 trace.set_tracer_provider(provider)

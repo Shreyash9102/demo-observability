@@ -3,6 +3,6 @@ prometheus_client
 gunicorn
 opentelemetry-api
 opentelemetry-sdk
-opentelemetry-exporter-otlp-proto-http
+opentelemetry-exporter-otlp-proto-grpc
 opentelemetry-instrumentation-flask
 python-json-logger
